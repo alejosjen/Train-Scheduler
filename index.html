@@ -5,33 +5,96 @@
     <meta charset="utf-8" />
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--CSS Reset-->
-    <link rel="stylesheet" media="screen" type="text/css" href="assets/css/reset.css" />
-    <!--CSS Styles-->
-    <link rel="stylesheet" media="screen" type="text/css" href="assets/css/style.css" />
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous" />
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <!--Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre:400,700|Bevan|Rye|Special+Elite|Ultra" />
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous" />
+     <!--Momentjs library-->
     <script scr="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es-us.js"></script>
 </head>
 
-<body>
+<style>
+    h1 {
+        font-family: 'Rye', serif;
+    }
+    p {
+        font-family: 'Special Elite', Times, serif;
+    }
+    body {
+        font-family: 'Averia Serif Libre', 'Times New Roman', Times, serif;
+    }
+/* font-family: 'Special Elite', cursive;
+font-family: 'Bevan', cursive;
+font-family: 'Averia Serif Libre', cursive;
+font-family: 'Ultra', serif;
+font-family: 'Rye', cursive; */
+</style>
 
-    <div class="container">
+<body class="bg-secondary">
+    <div class="container mb-2">
+        <div class="jumbotron bg-dark mt-2">
+            <h1 class="text-center text-white">Have Train, Will Travel</h1>
+            <p class="text-center text-white">Scheduling the next adventure!</p>
+            <img src="assets/images/train-bkgd.jpg" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                Current Train Schedule
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency(min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody id="train-schedule-table">
+                    <!--Javascript goes here-->
+                </tbody>
 
+            </table>
+        </div>
+        <br />
+
+        <div class="card">
+
+            <div class="card-header bg-dark text-white">
+                Add Train
+            </div>
+            <form class="p-2">
+                <div class="form-group">
+                    <label for="train-name">Train Name</label>
+                    <input type="text" class="form-control" id="train-name" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="first-train">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="first-train-time">
+                </div>
+                <div class="form-group">
+                    <label for="first-train">Frequency (min)</label>
+                    <input type="text" class="form-control" id="frequency-period">
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+        </div>
     </div>
-
-
     <!--Javascript-->
-    <script>
-       
-    </script>
+    <script src="assets/javascript/app.js"></script>
+
 </body>
 
 </html>
