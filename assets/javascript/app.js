@@ -36,24 +36,29 @@ database.ref().on("child_added", function (childSnapshot) {
     console.log(childSnapshot.val());
     var snap = childSnapshot.val();
 
-    var now = moment();
-    var startTime = moment(snap.firstTrainTime, "HH:mm").format("hh:mm a");
-console.log(startTime);
+
+    var startTime = moment(snap.firstTrainTime, "HH:mm");
+
+    console.log(startTime);
 
     var trainName = snap.trainName;
     var destination = snap.destination;
     var frequency = snap.frequencyPeriod;
     console.log(frequency);
-    var nextArrival = moment().add(frequency, 'minutes');
-    var minutesAway = moment(nextArrival).toNow("mm");
 
+    var currentTime = moment();
+    var startTimeConverted = moment(startTime).subtract(1, "years");
+    var diffTime = moment().diff(moment(startTimeConverted), "minutes");
+    var timeRemainder = diffTime % frequency;
+    var minutesAway = frequency - timeRemainder;
+    var nextArrival = moment().add(minutesAway, "minutes");
 
     $(`
 <tr>
 <td>${trainName}</td>
 <td>${destination}</td>
 <td>${frequency}</td>
-<td>${nextArrival}</td>
+<td>${nextArrival.format("hh:mm a")}</td>
 <td>${minutesAway}</td>
 <tr>
 `).appendTo('#train-schedule-table');
