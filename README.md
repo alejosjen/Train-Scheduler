@@ -1,4 +1,4 @@
-# Train-Scheduler(https://alejosjen.github.io/Train-Scheduler/)
+[# Train-Scheduler](https://alejosjen.github.io/Train-Scheduler/)
 This JS program takes a train attendant's information about known train times and calculates when the next train is expected.
 
 For styling, I used Bootstrap, Font Awesome, and Google Fonts.
