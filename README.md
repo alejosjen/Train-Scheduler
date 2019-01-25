@@ -4,9 +4,11 @@
 This JS program takes a train attendant's information about known train times and calculates when the next train is expected.
 
 To USE:
+
 As the train attendent requesting information on behalf of a rider, type in the name of the train in the first text area. Next, determine the destination, the time the train left the station, and the time interval of its trip by frequency in minutes. The app will then tell you based on your current location and time, the next expected time of the train and how many minutes away it is.
 
 Technologies:
+
 A Firebase database is used to store and retreive your information.
 
 The Momentjs library is used to:
